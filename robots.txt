@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://socialhug.lt/sitemap.xml
+Sitemap: https://socialhug.vercel.app/sitemap.xml
