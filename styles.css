@@ -1,0 +1,408 @@
+/* VšĮ SOCIAL HUG
+   Registras, ne portfolio. Institucinė tipografija, monochromas, struktūruoti duomenys.
+   Sistema: Bricolage Grotesque + IBM Plex Mono
+   Dydžiai: 13 · 15 · 17 · 20 · 30 · 46 */
+
+:root{
+  --paper:#F4F2ED;
+  --plate:#FBFAF7;
+  --ink:#1A1A18;
+  --muted:#5E5D58;
+  --line:rgba(26,26,24,.15);
+  --line-soft:rgba(26,26,24,.08);
+
+  --deep:#1E1E1B;
+  --deep-2:#121210;
+  --deep-lift:#2E2E29;
+  --on-deep:#F0EFEA;
+  --on-deep-muted:rgba(240,239,234,.62);
+  --on-deep-line:rgba(240,239,234,.20);
+
+  --accent:#1A1A18;
+  --accent-line:rgba(26,26,24,.32);
+  --accent-soft:#F0EFEA;
+
+  --e-ui:cubic-bezier(.4,0,.1,1);
+  --e-move:cubic-bezier(.35,0,0,1);
+  --d1:120ms;
+  --d2:250ms;
+  --d3:560ms;
+  --d4:900ms;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:clip}
+
+/* Lenis */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+
+body{
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;
+  font-optical-sizing:auto;
+  font-weight:400;
+  font-size:17px;
+  line-height:1.6;
+  background:var(--paper);
+  color:var(--ink);
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"kern","liga";
+}
+::selection{background:var(--ink);color:var(--paper)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.dark :focus-visible{outline-color:var(--on-deep)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+
+/* ───── tipografija ───── */
+h1,h2,h3{font-weight:460;letter-spacing:-.022em;text-wrap:balance}
+.h1{font-size:46px;line-height:1.14}
+.h2{font-size:30px;line-height:1.2}
+.h3{font-size:20px;line-height:1.32;font-weight:500;letter-spacing:-.012em}
+p{max-width:62ch;text-wrap:pretty}
+.lead{font-size:20px;line-height:1.5;color:var(--muted);max-width:56ch}
+.sm{font-size:15px;line-height:1.6}
+.muted{color:var(--muted)}
+
+.label{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:13px;font-weight:500;line-height:1.4;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--muted);max-width:none;
+  font-feature-settings:"tnum";
+}
+.meta{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:13px;font-weight:400;letter-spacing:.03em;
+  color:var(--muted);
+  font-feature-settings:"tnum";
+}
+
+/* ───── nav ───── */
+.nav{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:32px;padding-block:16px}
+.mark{display:flex;align-items:center;gap:12px}
+.mark img{height:38px;width:auto;flex:none}
+.mark span{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:13px;font-weight:500;letter-spacing:.18em;
+  text-transform:uppercase;white-space:nowrap;
+}
+.nav-links{display:flex;gap:2px;margin-right:-14px}
+.nav-links a{
+  position:relative;font-size:15px;color:var(--muted);
+  padding:8px 14px;
+  transition:color var(--d1) var(--e-ui);
+}
+.nav-links a::after{
+  content:"";position:absolute;left:14px;right:14px;bottom:0;height:2px;
+  background:var(--ink);transform:scaleX(0);transform-origin:left;
+  transition:transform 260ms var(--e-move);
+}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-links a[aria-current="page"]{color:var(--ink);font-weight:500}
+.nav-links a[aria-current="page"]::after{transform:scaleX(1)}
+
+/* ───── sekcijų rėmai ───── */
+.hero{padding:80px 0 76px}
+.sec{padding:88px 0}
+.sec-tone{background:#EBE8E0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec-head{margin-bottom:44px}
+.sec-head .label{margin-bottom:14px}
+.sec-head p.lead{margin-top:16px}
+
+/* ───── hero ───── */
+.hero-in{display:grid;grid-template-columns:1fr 320px;gap:64px;align-items:start}
+.hero .label{margin-bottom:22px}
+.hero .lead{margin-top:22px}
+.ln{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
+.ln>span{display:block}
+.acts{display:flex;align-items:center;gap:26px;flex-wrap:wrap;margin-top:34px}
+
+.btn{
+  display:inline-block;background:var(--deep);color:var(--on-deep);
+  font-size:15px;font-weight:500;letter-spacing:.01em;
+  padding:14px 28px;
+  transition:background var(--d1) var(--e-ui),transform var(--d1) var(--e-ui);
+}
+.btn:hover{background:var(--deep-2)}
+.btn:active{transform:scale(.985)}
+.btn-light{background:var(--on-deep);color:var(--deep)}
+.btn-light:hover{background:#fff}
+
+.link{
+  display:inline-block;position:relative;font-size:15px;font-weight:500;
+  color:var(--ink);padding-bottom:3px;
+  border-bottom:1px solid var(--line);
+  transition:color var(--d1) var(--e-ui);
+}
+.link::after{
+  content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;
+  background:var(--ink);transform:scaleX(0);transform-origin:left;
+  transition:transform 280ms var(--e-move);
+}
+.link:hover::after{transform:scaleX(1)}
+.link-light{color:var(--on-deep);border-bottom-color:var(--on-deep-line)}
+.link-light::after{background:var(--on-deep)}
+
+/* ───── duomenų registras (dt/dd) ───── */
+.record{border-top:1px solid var(--ink)}
+.rec-i{
+  display:grid;grid-template-columns:236px 1fr;gap:32px;
+  padding:13px 0;border-bottom:1px solid var(--line);
+}
+.rec-i dt{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:13px;font-weight:400;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);line-height:1.7;
+}
+.rec-i dd{font-size:17px;line-height:1.6}
+.rec-i dd .meta{font-size:15px;letter-spacing:.02em;color:var(--ink)}
+/* kompaktiškas variantas — siauram stulpeliui */
+.record-sm .rec-i{grid-template-columns:1fr auto;gap:18px;padding:11px 0}
+.record-sm dd{
+  font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:13px;letter-spacing:.03em;text-align:right;
+  font-feature-settings:"tnum";line-height:1.7;
+}
+.dark .record{border-top-color:var(--on-deep)}
+.dark .rec-i{border-bottom-color:var(--on-deep-line)}
+.dark .rec-i dt{color:var(--on-deep-muted)}
+
+/* ───── tamsi sekcija ───── */
+.dark{background:var(--deep);color:var(--on-deep)}
+.dark .lead,.dark .muted{color:var(--on-deep-muted)}
+.dark .label{color:var(--on-deep-muted)}
+
+/* ───── veiklos kryptys ───── */
+.doors-sec{padding-top:76px}
+.doors-head{padding-bottom:44px}
+.doors-head .label{margin-bottom:14px}
+.door{
+  display:block;position:relative;overflow:hidden;
+  border-top:1px solid var(--on-deep-line);
+  transition:color 420ms var(--e-move);
+}
+.door::before{
+  content:"";position:absolute;inset:0;background:var(--deep-lift);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 420ms var(--e-move);
+}
+.doors .door:last-of-type{border-bottom:1px solid var(--on-deep-line)}
+.door-in{position:relative;display:grid;grid-template-columns:48px minmax(0,1.15fr) minmax(0,1fr) 28px;gap:40px;align-items:baseline;padding-block:30px}
+.door-ix{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.06em;color:var(--on-deep-muted);transition:color 420ms var(--e-move)}
+.door-t{display:block;font-size:30px;line-height:1.2;letter-spacing:-.022em;font-weight:460}
+.door-tag{
+  display:inline-block;font-family:'IBM Plex Mono',ui-monospace,monospace;
+  font-size:13px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--on-deep-muted);margin-left:16px;vertical-align:middle;
+  padding:3px 9px;border:1px solid var(--on-deep-line);
+  transition:color 420ms var(--e-move),border-color 420ms var(--e-move);
+}
+.door-d{font-size:15px;line-height:1.6;color:var(--on-deep-muted);transition:color 420ms var(--e-move)}
+.door-go{justify-self:end;font-size:20px;line-height:1.4;color:var(--on-deep-muted);transition:transform 420ms var(--e-move),color 420ms var(--e-move)}
+.door:hover::before{transform:scaleX(1)}
+.door:hover .door-ix,.door:hover .door-d,.door:hover .door-tag{color:var(--on-deep)}
+.door:hover .door-tag{border-color:var(--on-deep-muted)}
+.door:hover .door-go{transform:translateX(8px);color:var(--on-deep)}
+
+/* ───── spread (kairysis bėgis + turinys) ───── */
+.spread{display:grid;grid-template-columns:236px 1fr;gap:32px;align-items:start}
+.spread-head .label{position:sticky;top:96px}
+
+/* ───── paslaugų eilutės ───── */
+.rows{border-top:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:48px 300px 1fr;gap:32px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line)}
+.row-ix{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;letter-spacing:.06em;color:var(--muted)}
+.row-t{font-size:20px;font-weight:500;letter-spacing:-.012em;line-height:1.32}
+.row p{font-size:15px;line-height:1.6;color:var(--muted)}
+.dark .rows{border-top-color:var(--on-deep)}
+.dark .row{border-bottom-color:var(--on-deep-line)}
+.dark .row-ix,.dark .row p{color:var(--on-deep-muted)}
+
+/* ───── projekto plokštelė ───── */
+.plate{background:var(--plate);border:1px solid var(--line)}
+.sec-tone .plate{background:var(--paper)}
+.plate-top{
+  background:var(--deep);color:var(--on-deep);
+  padding:12px 32px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+}
+.plate-top .meta{color:var(--on-deep-muted);font-size:13px}
+.plate-body{padding:40px 32px}
+.plate-body>.h3{margin-bottom:22px}
+.plate-body p+p{margin-top:14px}
+.blk{margin-top:34px}
+.blk .label{margin-bottom:12px}
+
+/* ES ženklinimas */
+.eu-block{
+  margin-top:34px;padding-top:26px;border-top:1px solid var(--line);
+  display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+}
+.eu-chip{display:inline-block;background:#fff;border:1px solid var(--line);padding:12px 16px}
+.eu-chip img{height:46px;width:auto}
+.eu-block p{font-size:15px;color:var(--muted);max-width:44ch}
+.aid-mark{height:76px;width:auto}
+
+/* ES ženklinimas plokštelės apačioje */
+.plate-eu{
+  display:flex;align-items:center;gap:26px;flex-wrap:wrap;
+  padding:22px 32px;border-top:1px solid var(--line);
+}
+.plate-eu p{max-width:46ch}
+.plate-2nd{margin-top:24px}
+
+/* tikslų tinklelis — kitas konteineris nei eilučių lentelė */
+.goals{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--on-deep-line);border:1px solid var(--on-deep-line)}
+.goal{background:var(--deep);padding:30px 28px}
+.goal .meta{display:block;margin-bottom:12px;color:var(--on-deep-muted)}
+.goal h3{font-size:20px;font-weight:500;letter-spacing:-.012em;line-height:1.32;margin-bottom:10px}
+.goal p{font-size:15px;line-height:1.6;color:var(--on-deep-muted);max-width:42ch}
+
+/* index'o projekto juosta */
+.pstrip{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;padding:32px}
+.pstrip-plain{grid-template-columns:1fr}
+.pstrip img.aid{height:72px;width:auto}
+.pstrip .h3{margin-bottom:8px}
+.pstrip .link{margin-top:18px}
+
+/* konsultacijų projektų blokas */
+.pj-band{padding:76px 0 132px}
+.pj-band .h2{margin-top:12px}
+.pj-body{margin-top:-86px;padding-bottom:88px;position:relative;z-index:1}
+.restart{margin-top:56px;border-top:1px solid var(--line);padding-top:30px}
+.restart .label{margin-bottom:12px}
+.restart .h3{margin-bottom:14px}
+
+/* ───── partneriai ───── */
+.partners{margin-top:34px}
+.partners .label{margin-bottom:10px}
+.partners p{font-size:15px;color:var(--muted);max-width:66ch}
+
+/* ───── kontaktų duomenys ───── */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.contact-grid .h2{margin-bottom:16px}
+.contact-grid>div>p.sm{color:var(--muted);margin-bottom:30px;max-width:44ch}
+.c-actions{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:30px}
+
+/* ───── footer ───── */
+footer{background:var(--deep);color:var(--on-deep);padding:64px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.3fr .8fr .9fr auto;gap:44px;align-items:start}
+.foot-grid .label{color:var(--on-deep-muted);margin-bottom:16px}
+.foot-logo{height:56px;width:auto;margin-bottom:20px;filter:invert(1);opacity:.93}
+.foot-org p{font-size:15px;line-height:1.75;color:var(--on-deep-muted)}
+.foot-org .org-name{color:var(--on-deep);font-weight:500}
+.foot-links{display:grid;gap:9px}
+.foot-links a,.foot-c a{
+  position:relative;width:fit-content;font-size:15px;color:var(--on-deep-muted);
+  transition:color var(--d1) var(--e-ui);
+}
+.foot-links a:hover,.foot-c a:hover{color:var(--on-deep)}
+.foot-c{display:grid;gap:9px}
+.foot-base{
+  margin-top:52px;padding-top:20px;border-top:1px solid var(--on-deep-line);
+  display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+}
+.foot-base .meta{color:var(--on-deep-muted);font-size:13px}
+
+/* ───── judesys ───── */
+html.js [data-r]{opacity:0;transform:translateY(14px)}
+html.js .r-in[data-r]{opacity:1;transform:none;transition:opacity 360ms linear,transform var(--d3) var(--e-move)}
+
+html.js .ln>span{transform:translateY(106%)}
+html.js .hero-go .ln>span{transform:none;transition:transform var(--d4) var(--e-move)}
+html.js .hero-go .ln:nth-child(2)>span{transition-delay:80ms}
+html.js .hero-go .ln:nth-child(3)>span{transition-delay:160ms}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;transition-delay:0ms!important}
+  html.js [data-r]{opacity:1;transform:none}
+  html.js .ln>span{transform:none}
+}
+
+/* ───── 1080 ───── */
+@media (max-width:1080px){
+  .h1{font-size:38px}
+  .h2{font-size:26px}
+  .door-t{font-size:24px}
+  .hero-in{grid-template-columns:1fr 270px;gap:44px}
+  .door-in{grid-template-columns:44px minmax(0,1.1fr) minmax(0,1fr) 24px;gap:26px}
+  .row{grid-template-columns:44px 250px 1fr;gap:24px}
+  .spread{grid-template-columns:190px 1fr;gap:28px}
+  .rec-i{grid-template-columns:200px 1fr;gap:24px}
+  .foot-grid{grid-template-columns:1.2fr .8fr .9fr;gap:36px}
+}
+
+/* ───── 900 ───── */
+@media (max-width:900px){
+  .wrap{padding:0 24px}
+  .hero{padding:56px 0 56px}
+  .hero-in{grid-template-columns:1fr;gap:40px}
+  .rail-wrap{max-width:520px}
+  .sec{padding:64px 0}
+  .doors-sec{padding-top:56px}
+  .doors-head{padding-bottom:32px}
+  .door-in{grid-template-columns:40px 1fr 24px;gap:8px 18px;padding-block:26px}
+  .door-in .door-ix{grid-row:1;grid-column:1}
+  .door-in .door-body{grid-row:1;grid-column:2}
+  .door-in .door-d{grid-row:2;grid-column:2}
+  .door-in .door-go{grid-row:1;grid-column:3}
+  .row{grid-template-columns:40px 1fr;gap:6px 18px}
+  .row .row-ix{grid-row:1;grid-column:1}
+  .row .row-t{grid-row:1;grid-column:2}
+  .row p{grid-row:2;grid-column:2}
+  .spread{grid-template-columns:1fr;gap:22px}
+  .spread-head .label{position:static}
+  .rec-i{grid-template-columns:1fr;gap:2px;padding:12px 0}
+  .plate-body{padding:30px 22px}
+  .plate-top{padding:11px 22px}
+  .pstrip{grid-template-columns:1fr;gap:24px;padding:26px 22px}
+  .pj-band{padding:56px 0 108px}
+  .pj-body{margin-top:-72px;padding-bottom:64px}
+  .contact-grid{grid-template-columns:1fr;gap:40px}
+  .goals{grid-template-columns:1fr}
+  .goal{padding:24px 22px}
+  .plate-eu{padding:20px 22px;gap:18px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:34px}
+  .foot-org{grid-column:1/-1}
+  footer{padding:52px 0 26px}
+  .util-in{padding-block:8px;gap:6px 20px}
+}
+
+/* ───── 520 ───── */
+@media (max-width:680px){
+  .nav-in{flex-direction:column;align-items:stretch;gap:10px;padding-block:14px}
+  .nav-links{width:100%;justify-content:space-between;gap:0}
+  .nav-links a{font-size:14px;padding:13px 6px}
+  .nav-links a::after{left:6px;right:6px}
+  .h1 .ln{display:inline;overflow:visible;padding-bottom:0;margin-bottom:0}
+  .h1 .ln>span{display:inline}
+  html.js .h1 .ln>span{transform:none}
+  html.js .hero .h1{opacity:0;transition:opacity 400ms linear}
+  html.js .hero-go .h1{opacity:1}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .h1{font-size:29px}
+  .h2{font-size:22px}
+  .lead{font-size:18px}
+  .door-t{font-size:21px}
+  .door-tag{display:block;margin:8px 0 0}
+  .row-t{font-size:18px}
+  .hero{padding:44px 0 48px}
+  .sec{padding:52px 0}
+  .doors-sec{padding-top:48px}
+  .aid-mark,.pstrip img.aid{height:58px}
+  .eu-chip{padding:10px 12px}
+  .eu-chip img{height:38px}
+  .eu-block{gap:20px;margin-top:26px;padding-top:20px}
+  .util-r{gap:14px}
+  .util .meta{font-size:12px}
+  .foot-grid{grid-template-columns:1fr;gap:30px}
+  .foot-logo{height:48px}
+}
