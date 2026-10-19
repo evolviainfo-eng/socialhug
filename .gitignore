@@ -2,3 +2,8 @@ fs-server.js
 .claude/
 .DS_Store
 __*.html
+_gate/
+_qa/
+_phone/
+_ios/
+_gate.log

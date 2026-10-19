@@ -1,0 +1,19 @@
+{
+ "name": "V\u0161\u012e Social Hug",
+ "short_name": "Social Hug",
+ "icons": [
+  {
+   "src": "/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  }
+ ],
+ "theme_color": "#161614",
+ "background_color": "#161614",
+ "display": "browser"
+}
