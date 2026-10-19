@@ -411,3 +411,7 @@ html.js .hero-go .ln:nth-child(3)>span{transition-delay:160ms}
   .foot-grid{grid-template-columns:1fr;gap:30px}
   .foot-logo{height:48px}
 }
+
+/* Kauno r. savivaldybės projektas */
+.kr-mark{height:120px;width:auto}
+.pstrip img.aid[src*="kauno-r"]{height:88px}
