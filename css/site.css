@@ -453,3 +453,11 @@ html.lenis, html.lenis body { height: auto; }
 .tl-key { margin-top: 38px; }
 .ann-main p, .ann-main dd { max-width: 66ch; }
 @media (max-width: 600px) { :root { --sec: 60px; } }
+
+/* phone hero v2 (2026-10-19): one full screen, the claim on top, the hands carry it from the bottom edge */
+@media (max-width: 900px) {
+  .hero-home { min-height: 100svh; display: flex; flex-direction: column; padding-bottom: 0; overflow: clip; }
+  .hero-home > .wrap { flex: 1; display: flex; flex-direction: column; }
+  .hero-home .hero-grid { flex: 1; display: flex; flex-direction: column; gap: 0; }
+  .hero-home .hero-mark { order: 0; margin-top: auto; align-self: center; justify-self: auto; width: calc(100% + var(--gut) * 2 - 12px); max-width: 640px; padding: 28px 0 22px; }
+}

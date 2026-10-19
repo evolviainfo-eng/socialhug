@@ -189,7 +189,7 @@ def page_index():
       <div class="hero-grid">
         <div>
           <h1 class="t-display rv" style="--d:0ms">Teisinė ir socialinė pagalba<span class="m-hide">, veiklos vaikams</span> Kauno rajone.</h1>
-          <p class="lead rv" style="--d:140ms">VšĮ „Social Hug“ konsultuoja žmones, turinčius įsiskolinimų<span class="m-hide">, ir organizuoja veiklas vaikams bei paaugliams</span>.</p>
+          <p class="lead rv" style="--d:140ms">VšĮ „Social Hug“ konsultuoja žmones, turinčius įsiskolinimų, ir organizuoja veiklas vaikams bei paaugliams.</p>
           <div class="acts rv" style="--d:280ms">
             <a class="btn" href="konsultacijos.html#kreiptis">Kreiptis dėl konsultacijos {ARR}</a>
             <a class="lnk" href="tel:{TEL}">{TEL_H}</a>
@@ -197,7 +197,7 @@ def page_index():
         </div>
         {hero_mark()}
       </div>
-      <dl class="facts rv" style="--d:420ms">
+      <dl class="facts rv m-hide" style="--d:420ms">
         <div><dt>Organizacija</dt><dd>VšĮ, nuo 2023</dd></div>
         <div><dt>Vykdomi projektai</dt><dd>2 · Kauno r. sav., ES</dd></div>
         <div><dt>Veikiame</dt><dd>Kauno rajone</dd></div>
