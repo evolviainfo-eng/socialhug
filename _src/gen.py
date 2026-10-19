@@ -17,14 +17,6 @@ def svg(key, cls, label=None):
     return f'<svg class="{cls}" viewBox="{o["vb"]}"{a}><g transform="{o["tr"]}"><path d="{o["d"]}"/></g></svg>'
 
 
-def hero_mark():
-    o = LOGO['mark']
-    draws = ''.join(f'<path d="{d}" pathLength="1"/>' for d in o['subs'])
-    return (f'<div class="hero-mark" data-signature><svg viewBox="{o["vb"]}" role="img" '
-            f'aria-label="Social Hug ženklas: dvi rankos ir širdis"><g transform="{o["tr"]}">'
-            f'<path class="m-fill" d="{o["d"]}"/><g class="m-draw">{draws}</g></g></svg></div>')
-
-
 NAV = [('konsultacijos.html', 'Konsultacijos'), ('jaunimas.html', 'Jaunimas'),
        ('projektai.html', 'Projektai'), ('#kontaktai', 'Kontaktai')]
 
@@ -186,16 +178,13 @@ def page_index():
     rows = ''.join(f'''<a class="door" href="{h}"><span class="wrap door-in"><span class="door-t">{t}</span><span class="door-d">{d}</span><span class="door-s">{s}{ARR}</span></span></a>''' for h, t, d, s in doors)
     return f'''<section class="hero hero-home" data-hero>
     <div class="wrap">
-      <div class="hero-grid">
-        <div>
-          <h1 class="t-display rv" style="--d:0ms">Teisinė ir socialinė pagalba<span class="m-hide">, veiklos vaikams</span> Kauno rajone.</h1>
-          <p class="lead rv" style="--d:140ms">VšĮ „Social Hug“ konsultuoja žmones, turinčius įsiskolinimų, ir organizuoja veiklas vaikams bei paaugliams.</p>
-          <div class="acts rv" style="--d:280ms">
-            <a class="btn" href="konsultacijos.html#kreiptis">Kreiptis dėl konsultacijos {ARR}</a>
-            <a class="lnk" href="tel:{TEL}">{TEL_H}</a>
-          </div>
+      <h1 class="t-poster rv" style="--d:0ms" data-signature>Teisinė ir socialinė pagalba<span class="m-hide">, veiklos vaikams</span> Kauno rajone.</h1>
+      <div class="hero-row">
+        <p class="lead rv" style="--d:140ms">VšĮ „Social Hug“ konsultuoja žmones, turinčius įsiskolinimų, ir organizuoja veiklas vaikams bei paaugliams.</p>
+        <div class="acts rv" style="--d:280ms">
+          <a class="btn" href="konsultacijos.html#kreiptis">Kreiptis dėl konsultacijos {ARR}</a>
+          <a class="lnk" href="tel:{TEL}">{TEL_H}</a>
         </div>
-        {hero_mark()}
       </div>
       <dl class="facts rv m-hide" style="--d:420ms">
         <div><dt>Organizacija</dt><dd>VšĮ, nuo 2023</dd></div>
